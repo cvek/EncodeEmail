@@ -71,7 +71,7 @@ class HEmailEncode {
       $result .= 'document.write('.$rndName.' + "'.$pairStr.'");';
       $result = self::getJs($result);
     } else {
-      $result = self::getJs($result).$content.self::getJs($pairStr);
+      $result = self::getJs($result).$content.self::getJs('document.write("'.$pairStr.'");');
     }
     return $result;
   }
